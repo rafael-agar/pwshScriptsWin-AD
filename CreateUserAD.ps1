@@ -15,7 +15,7 @@ New-ADUser `
  -EmailAddress "$logon$lastname@domain.com"  `
  -Description "..." `
  -Country "..." `
- -Path "OU=$OU,DC=CONTOSO,DC=local" `
+ -Path "OU=$OU,DC=DOMAIN,DC=local" `
  -AccountPassword (ConvertTo-SecureString "P@ssword" -AsPlainText -force) `
  -Enabled $True `
  -PasswordNeverExpires $False `
