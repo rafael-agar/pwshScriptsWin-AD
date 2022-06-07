@@ -7,6 +7,6 @@ Get-NetAdapter -Name * | Format-Table -View Name
 $adapter = Read-Host -Pormpt "Type Network Adapter Name: "
 $newname = Read-Host -Pormpt "Type Computer Name: "
 
-#setting FileServer
+#setting
 New-NetIPAddress -InterfaceIndex $adapter -IPAddress $ip -AddressFamily IPv4 -PrefixLength $prefix -DefaultGateway $gw
 Rename-Computer -NewName $newname -Force -Restart:$true
