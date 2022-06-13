@@ -14,12 +14,12 @@ Invoke-Command -ComputerName COMP1,COMP2 `
 -ScriptBlock {Install-WindowsFeature Storage-Replica, FS-FoleServer -IncludeManagementTools -Restart}
 
 # Testing on premise
-Test-SRTopology -SourceComputerName COMP1 -SourceVolumeName U: SourceLogVolumeName L: `
+Test-SRTopology -SourceComputerName COMP1 -SourceVolumeName U: -SourceLogVolumeName L: `
 -DestinationComputerName COMP2 -DestinationVolumeName U: -DestinationLogVolumeName L: `
 -DurationInMinutes 5 -ResultPath c:\temp
 
 #creating Partnership
 New-SRPartnership -SourceComputerName COMP1 -SourceRGName RG1 `
--SourceVolumeName U: SourceLogVolumeName L: `
+-SourceVolumeName U: -SourceLogVolumeName L: `
 -DestinationComputerName COMP2 -SourceRGName RG2 `
 -DestinationVolumeName U: -DestinationLogVolumeName L:
